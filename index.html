@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tbody class="table" id="table">
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Pages</th>
+              <th>Read</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+              <td>Yes</td>
+            </tr>
+        </tbody>
+      </table>
+      <button type="submit" id="add-new">Add New</button>
+
+      <form class="new-entry" id="new-entry">
+        <label>Add a new book!</label>
+
+        <label>
+            Title:<br>
+            <input id="title">
+        </label>
+
+        <label>
+            Author:<br>
+            <input id="author">
+        </label>
+
+        <label>
+            Number of Pages:<br>
+            <input id="pages">
+        </label>
+
+        <label>Read:<br></label>
+            
+        <select name="" id="read" class="read">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        
+        <div class="btn-flex">
+            <button type="submit" id="add-btn">Add</button>
+            <button type="submit" id="exit-btn">Exit</button>
+        </div>
+
+      </form>
+    <script src="/app.js"></script>
+</body>
+</html>

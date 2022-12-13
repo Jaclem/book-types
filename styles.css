@@ -1,0 +1,26 @@
+.new-entry {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 25rem;
+    height: 20rem;
+    background-color: blue;
+    visibility: hidden;
+}
+
+label {
+    text-align: center;
+    color: white;
+}
+
+.btn-flex {
+    display: flex;
+}
+
+.visibility {
+    visibility: visible;
+}
+
