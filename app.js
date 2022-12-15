@@ -1,20 +1,15 @@
 const table = document.getElementById('table');
 const addNew = document.getElementById('add-new');
+const addBtn = document.getElementById('add-btn');
+const exitBtn = document.getElementById('exit-btn');
+const newEntry = document.getElementById('new-entry');
 const titleInput = document.getElementById('title');
 const authorInput = document.getElementById('author');
 const pageInput = document.getElementById('pages');
 const readInput = document.getElementById('read');
-const addBtn = document.getElementById('add-btn');
-const exitBtn = document.getElementById('exit-btn');
-const newEntry = document.getElementById('new-entry');
-
-console.log(exitBtn);
 
 
-let myLibrary = [
-    {title: "poop", author: 'poopy', pages: '246', read: 'yes'},
-    {title: "second", author: 'third', pages: '300', read: 'no'}
-];
+let myLibrary = [];
 
 function Book(title, author, pages, read){
     this.title = title,
@@ -23,54 +18,50 @@ function Book(title, author, pages, read){
     this.read = read
 }
 
-// Book.prototype.addRows = function() {
-
-// }
-
-
 
 function addBookToLibrary() {
-    myLibrary.forEach(item => {
-        const tableRow = document.createElement('tr');
-        table.appendChild(tableRow);
+    const books = Object.create(Book);
+
+    books.title = titleInput.value;
+    books.author = authorInput.value;
+    books.pages = pageInput.value;
+    books.read = readInput.value;
+
+    myLibrary.push(books);
+    let tableRow;
+
+    for(let i = 0; i < myLibrary.length; i++){
+        tableRow = document.createElement('tr');
+        table.appendChild(tableRow);        
+    };
+
+    const bookArr = [`${books.title}`, `${books.author}`, `${books.pages}`, `${books.read}`];
     
-        const bookArr = [`${item.title}`, `${item.author}`, `${item.pages}`, `${item.read}`];
-        console.log(bookArr);
-    
-        bookArr.forEach(list => {
-            const tableData = document.createElement('td');
-            tableData.innerText = list;
-            tableRow.appendChild(tableData);
-    
-    
-            console.log(list);
-        });
-        
+    bookArr.forEach(list => {
+        const tableData = document.createElement('td');
+        tableData.innerText = list;
+        tableRow.appendChild(tableData);
     });
 }
 
-addBookToLibrary();
+// Event Listeners
 
-function addItemsToList(n) {
+addNew.addEventListener('click', (e)=> {
+    e.preventDefault();
+    newEntry.classList.add('visibility');
+});
 
-    let books = {}
-    for (let i = 0; i < n; ++i) {
-        books[i] = new Book()
-    }
-    return books
-}
+addBtn.addEventListener('click', (e)=> {
+    e.preventDefault();
+    newEntry.classList.remove('visibility');
+    addBookToLibrary();
+});
 
-// addItemsToList();
+exitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    newEntry.classList.remove('visibility');
+});
 
-// addNew.addEventListener('click', ()=> {
-//     newEntry.classList.add('visibility');
-// });
-
-// exitBtn.addEventListener('click', ()=> {
-//     newEntry.classList.remove('visibility');
-// });
-
-// addBookToLibrary();
 
 
 
