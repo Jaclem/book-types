@@ -18,7 +18,9 @@ function Book(title, author, pages, read){
     this.read = read
 }
 
-
+// creates a new book object and adds it to myLibrary array
+// then checks to see if inputs are blank and lets user know they are required if true
+// finally adds myLibrary array items to the page
 function addBookToLibrary() {
     const books = Object.create(Book);
 
@@ -30,18 +32,27 @@ function addBookToLibrary() {
     myLibrary.push(books);
     let tableRow;
 
-    for(let i = 0; i < myLibrary.length; i++){
-        tableRow = document.createElement('tr');
-        table.appendChild(tableRow);        
-    };
+    if(books.title == '' || books.author == '' || books.pages == ''){
+        const required = document.getElementById('required');
+        required.innerText = "All fields are required";
+        required.style.color = "red";
+    }
+    else {
+        newEntry.classList.remove('visibility');
 
-    const bookArr = [`${books.title}`, `${books.author}`, `${books.pages}`, `${books.read}`];
-    
-    bookArr.forEach(list => {
-        const tableData = document.createElement('td');
-        tableData.innerText = list;
-        tableRow.appendChild(tableData);
-    });
+        for(let i = 0; i < myLibrary.length; i++){
+            tableRow = document.createElement('tr');
+            table.appendChild(tableRow);        
+        };
+
+        const bookArr = [`${books.title}`, `${books.author}`, `${books.pages}`, `${books.read}`];
+        
+        bookArr.forEach(list => {
+            const tableData = document.createElement('td');
+            tableData.innerText = list;
+            tableRow.appendChild(tableData);
+        });
+    }
 }
 
 // Event Listeners
@@ -53,7 +64,6 @@ addNew.addEventListener('click', (e)=> {
 
 addBtn.addEventListener('click', (e)=> {
     e.preventDefault();
-    newEntry.classList.remove('visibility');
     addBookToLibrary();
 });
 

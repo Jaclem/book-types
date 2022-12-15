@@ -16,32 +16,26 @@
               <th>Pages</th>
               <th>Read</th>
             </tr>
-            <tr>
-              <td>Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
-              <td>Yes</td>
-            </tr>
         </tbody>
       </table>
       <button type="submit" id="add-new">Add New</button>
 
-      <form class="new-entry" id="new-entry">
+      <form action="#" class="new-entry" id="new-entry">
         <label>Add a new book!</label>
-
+        <p id="required"></p>
         <label>
             Title:<br>
-            <input type="text" id="title" required="required" />
+            <input type="text" id="title" required />
         </label>
 
         <label>
             Author:<br>
-            <input type="text" id="author" required="required" />
+            <input type="text" id="author" required />
         </label>
 
         <label>
             Number of Pages:<br>
-            <input type="text" id="pages" required="required" />
+            <input type="text" id="pages" required />
         </label>
 
         <label>Read:<br></label>
@@ -53,7 +47,7 @@
         </select>
         
         <div class="btn-flex">
-            <button id="add-btn">Add</button>
+            <button type="submit" id="add-btn">Add</button>
             <button id="exit-btn">Exit</button>
         </div>
 
