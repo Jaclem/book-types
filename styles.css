@@ -24,3 +24,12 @@ label {
     visibility: visible;
 }
 
+.trash-button {
+    background: url(/images/trash-solid.svg) no-repeat center;
+    font-weight: 700;
+    border: none;
+    height: 20px;
+    cursor: pointer;
+}
+
+
