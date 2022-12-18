@@ -4,51 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <title>Document</title>
 </head>
 <body>
-    <table>
-        <tbody class="table" id="table">
+    <nav class="nav">
+        <p>Library Project</p>
+    </nav>
+
+    <table class="table-body">
+        <thead>
             <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Pages</th>
-              <th>Read</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Read</th>
+                <th>Delete</th>
             </tr>
+        </thead>
+
+        <tbody class="table" id="table">
         </tbody>
-      </table>
-      <button type="submit" id="add-new">Add New</button>
+        
+    </table>
+
+    <div class="add-new-container">
+        <button type="submit" id="add-new">Add New</button>
+    </div>
 
       <form action="#" class="new-entry" id="new-entry">
-        <label>Add a new book!</label>
-        <p id="required"></p>
-        <label>
-            Title:<br>
+        <div class="form-container">
+
+            <span class="close" id="close">&times;</span>
+
+            <p>Add a new book!</p>
+            <p id="required"></p>
+            <label>Title:</label>
             <input type="text" id="title" required />
-        </label>
 
-        <label>
-            Author:<br>
+            <label>Author:</label>
             <input type="text" id="author" required />
-        </label>
 
-        <label>
-            Number of Pages:<br>
-            <input type="text" id="pages" required />
-        </label>
+            <label>Number of Pages:</label>
+            <input type="number" id="pages" required />
 
-        <label>Read:<br></label>
+            <label>Read:</label>
             
-        <select id="read" class="read">
-            <option>Yes</option>
-            <option>No</option>
-            <option>In Progress</option>
-        </select>
-        
-        <div class="btn-flex">
-            <button type="submit" id="add-btn">Add</button>
-            <button id="exit-btn">Exit</button>
+            <select id="read" class="read">
+                <option>Yes</option>
+                <option>No</option>
+                <option>In Progress</option>
+            </select>
+            
+            <div class="btn-flex">
+                <button type="submit" class="add-btn" id="add-btn">&#43;</button>
+            </div>
         </div>
 
       </form>
