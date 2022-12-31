@@ -9,12 +9,15 @@ let myLibrary = [];
 let tableRow;
 let tableData;
 
-function Book(title, author, pages, read){
+class Book {
+  constructor(title, author, pages, read){
     this.title = title,
     this.author = author,
     this.pages = pages,
     this.read = read
+  }
 }
+
 
 // then checks to see if inputs are blank and lets user know they are required if true
 // finally adds myLibrary array items to the page
@@ -74,6 +77,7 @@ function createTrashBtn() {
         myLibrary.splice(testNum, 1);
     });
 }
+
 
 
 // Event Listeners
